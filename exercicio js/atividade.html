@@ -1,0 +1,150 @@
+<html>
+    <body>
+        <button id="exercicio2">Exercício 2 - Maior número</button>
+        <br><br>
+        <button id="exercicio3">Exercício 3 - Mensagem pela nota</button>
+        <br><br>
+        <button id="exercicio4">Exercício 4 - Média do vetor</button>
+        <br><br>
+        <button id="exercicio5">Exercício 5 - Mensagem pela letra</button>
+        <br><br>
+        <button id="exercicio6">Exercício 6 - Soma da matriz</button>
+        <br><br>
+        <button id="exercicio7">Exercício 7 - Fatorial</button>
+        <br><br>
+        <button id="exercicio8">Exercício 8 - Escolha do menu</button>
+        <br><br>
+        <button id="exercicio9">Exercício 9 - Maior número do vetor</button>
+        <br><br>
+        <button id="exercicio10">Exercício 10 - Média da matriz</button>
+    </body>
+
+    <script>
+        document.getElementById('exercicio2').addEventListener('click', function() {
+            let num1 = parseFloat(prompt("Digite o primeiro número:"));
+            let num2 = parseFloat(prompt("Digite o segundo número:"));
+
+            if (num1 > num2) {
+                alert("O maior número é: " + num1);
+            } else if (num2 > num1) {
+                alert("O maior número é: " + num2);
+            } else {
+                alert("Os números são iguais.");
+            }
+        });
+
+        document.getElementById('exercicio3').addEventListener('click', function() {
+            let nota = parseFloat(prompt("Digite a sua nota:"));
+
+            if (nota < 6) {
+                alert("Reprovado");
+            } else if (nota >= 6 && nota < 8) {
+                alert("Aprovado");
+            } else {
+                alert("Aprovado");
+            }
+        });
+
+        document.getElementById('exercicio4').addEventListener('click', function() {
+            let vetor = [1, 5, 8, 2, 10]; 
+            let soma = 0;
+
+            for (let i = 0; i < vetor.length; i++) {
+                soma += vetor[i];
+            }
+
+            let media = soma / vetor.length;
+            alert("A média dos números do vetor é: " + media);
+        });
+
+        document.getElementById('exercicio5').addEventListener('click', function() {
+            let letra = prompt("Digite uma letra:");
+
+            if (letra === "a") {
+                alert("A");
+            } else if (letra === "b") {
+                alert("B");
+            } else {
+                alert("Outra letra");
+            }
+        });
+
+        document.getElementById('exercicio6').addEventListener('click', function() {
+            let matriz = [
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ];
+            let somaMatriz = 0;
+
+            for (let i = 0; i < matriz.length; i++) {
+                for (let j = 0; j < matriz[i].length; j++) {
+                    somaMatriz += matriz[i][j];
+                }
+            }
+
+            alert("A soma dos elementos da matriz é: " + somaMatriz);
+        });
+
+        document.getElementById('exercicio7').addEventListener('click', function() {
+            let numero = parseInt(prompt("Digite um número para calcular o fatorial:"));
+            let fatorial = 1;
+
+            for (let i = 1; i <= numero; i++) {
+                fatorial *= i;
+            }
+
+            alert("O fatorial de " + numero + " é: " + fatorial);
+        });
+
+        document.getElementById('exercicio8').addEventListener('click', function() {
+            let opcao = parseInt(prompt("Escolha uma opção:\n1. Opção 1\n2. Opção 2\n3. Opção 3"));
+
+            switch (opcao) {
+                case 1:
+                    alert("Opção 1 escolhida");
+                    break;
+                case 2:
+                    alert("Opção 2 escolhida");
+                    break;
+                case 3:
+                    alert("Opção 3 escolhida");
+                    break;
+                default:
+                    alert("Opção inválida");
+            }
+        });
+
+        document.getElementById('exercicio9').addEventListener('click', function() {
+            let numeros = [10, 20, 35, 47, 58];
+            let maior = numeros[0]; 
+
+            for (let i = 1; i < numeros.length; i++) {
+                if (numeros[i] > maior) {
+                    maior = numeros[i]; 
+                }
+            }
+
+    alert("O maior número do vetor é: " + maior);
+});
+
+        document.getElementById('exercicio10').addEventListener('click', function() {
+            let matrizMedia = [
+                [5, 10, 15],
+                [20, 25, 30]
+            ];
+            let somaTotal = 0;
+            let totalElementos = 0;
+
+            for (let i = 0; i < matrizMedia.length; i++) {
+                for (let j = 0; j < matrizMedia[i].length; j++) {
+                    somaTotal += matrizMedia[i][j];
+                    totalElementos++;
+                }
+            }
+
+            let mediaMatriz = somaTotal / totalElementos;
+            alert("A média dos elementos da matriz é: " + mediaMatriz);
+        });
+    </script>
+</html>
